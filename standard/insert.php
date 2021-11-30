@@ -1,16 +1,4 @@
 <?php include('insert_stan.php'); ?>
-<?php
-while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)){
- $standard_meet = iconv("tis-620" , "utf-8" , $result["standard_meet"]);
- $standard_number = iconv("tis-620" , "utf-8" , $result["standard_number"]);
- $standard_detail = iconv("tis-620" , "utf-8" , $result["standard_detail"]);
- $standard_mandatory = iconv("tis-620" , "utf-8" , $result["standard_mandatory"]);
- $agency_id = iconv("tis-620" , "utf-8" , $result["agency_id"]);
- $department_id = iconv("tis-620" , "utf-8" , $result["department_id"]);
- $type_id = iconv("tis-620" , "utf-8" , $result["type_id"]);
- $group_id = iconv("tis-620" , "utf-8" , $result["group_id"]);
-}
-?>
 <div class="tab-content">
     <div id="home" class="container-fluid tab-pane active m-2">
         <div class="border rounded-2 border-2 bg-danger text-white ">
@@ -23,7 +11,12 @@ while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)){
                         <br>
                         <br>
                         <br>
+                        <?php $i = 1; ?>
                         <div class="grid ">
+                        <div class="">
+                                <label><strong>ลำดับที่ : <?=$i++?> </strong> </label>
+                           
+                            </div>
                             <div class="">
                                 <label> วาระจากที่ประชุม </label>
                                 <input type="text" name="standard_meet" class="form-control" autocomplete="off">
@@ -58,18 +51,32 @@ while($result = sqlsrv_fetch_array($query, SQLSRV_FETCH_ASSOC)){
                                 <label> ชื่อมาตรฐาน </label>
                                 <input type="text" name="standard_detail" class="form-control" autocomplete="off">
                             </div>
-                            <div class="">
-                                <label> หน่วยงานที่สามารถทดสอบได้ </label>
-                                <input type="text" name="agency_id" class="form-control" autocomplete="off">
-                            </div>
+                            <div class="f-red">
+                            <label class="form-label">หน่วยงานที่สามารถทดสอบได้</label>
+                            <select class="form-control" name="group_id" style="height: unset !important;">
+                                <option value="" selected disabled>หน่วยงานที่สามารถทดสอบได้</option>
+                                <?php while($result = sqlsrv_fetch_array($query2, SQLSRV_FETCH_ASSOC)) {
+                                      $agency_id = iconv("tis-620" , "utf-8" , $result["agency_id"]);
+                                      $agency_name = iconv("tis-620" , "utf-8" , $result["agency_name"]); ?>
+                                <option value="<?=$agency_id?>"><?=$agency_name?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
                             <div class="">
                                 <label> มาตรฐานบังคับ </label>
                                 <input type="text" name="standard_mandatory" class="form-control" autocomplete="off">
                             </div>
-                            <div class="">
-                                <label> หน่วยงานที่ขอ </label>
-                                <input type="text" name="department_id" class="form-control" autocomplete="off">
-                            </div>
+                            <div class="f-red">
+                            <label class="form-label">หน่วยงานที่ขอ</label>
+                            <select class="form-control" name="group_id" style="height: unset !important;">
+                                <option value="" selected disabled>หน่วยงานที่ขอ</option>
+                                <?php while($result = sqlsrv_fetch_array($query3, SQLSRV_FETCH_ASSOC)) {
+                                      $department_id = iconv("tis-620" , "utf-8" , $result["department_id"]);
+                                      $department_name = iconv("tis-620" , "utf-8" , $result["department_name"]); ?>
+                                <option value="<?=$department_id?>"><?=$department_name?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
                             <div class="">
                                 <label> หมายเลข tracking </label>
                                 <input type="text" name="" class="form-control" autocomplete="off">
