@@ -5,9 +5,7 @@
     box-sizing: border-box;
   }
   
-  body{
-    font-family: sans-serif;
-  }
+
   
   input, label, a{
     display: block;
@@ -144,6 +142,8 @@
 .mg-t{
     margin-top:25px;
     
+    margin-left:20px;
+    
     margin-bottom:20px;
     
 }
@@ -162,5 +162,9 @@
 }
 .t-cen{
     text-align:center;
+}
+
+.mg-l{
+  margin-left:20px;
 }
   </style>

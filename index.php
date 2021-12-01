@@ -15,6 +15,8 @@
         include('standard/insert.php');
     }elseif (isset($_GET['page']) && $_GET['page'] == 'status') {
         include('standard/status.php');
+    }elseif (isset($_GET['page']) && $_GET['page'] == 'report') {
+        include('standard/report.php');
     }
     ?>
 </body>

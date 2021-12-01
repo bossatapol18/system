@@ -1,5 +1,6 @@
 <?php include('status_sql.php'); ?>
-<div class="tab-content">
+
+<div class="tab-content font">
     <div id="home" class="container-fluid tab-pane active m-2">
         <div class="border rounded-2 border-2 bg-danger text-white ">
             <h1 class="mg-t">แก้ไขสถานะเอกสาร มอก.</h1>

@@ -1,7 +1,7 @@
-    <div class="  tab-content">
+    <div class="  tab-content font">
         <div id="home" class="container-fluid tab-pane active m-2">
             <div class="border rounded-2 border-2 bg-info text-white ">
-                <h1 class="mg-t">เอกสารที่ยื่นขอ มอก. ทั้งหมด</h1>
+                <h1 class="mg-t ">เอกสารที่ยื่นขอ มอก. ทั้งหมด</h1>
             </div>
             <table class="table table-striped mg-t">
     <thead>
