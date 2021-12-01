@@ -1,5 +1,4 @@
 <?php 
-include('./connection/connection.php');
 $type_id = (isset($_GET['type_id'])) ? $_GET['type_id'] : '';
 $group_id = (isset($_GET['group_id'])) ? $_GET['group_id'] : '';
 $department_id = (isset($_GET['department_id'])) ? $_GET['department_id'] : '';
@@ -12,14 +11,17 @@ if (isset($_POST) && !empty($_POST)) {
             eval(sprintf('$%s="%s";',$key,
             utf8toThai($value)));
         } 
-$sql = "INSERT INTO standard_tb (standard_meet,standard_number,standard_detail,standard_mandatory,agency_id,department_id,type_id,group_id) VALUES (?,?,?,?,?,?,?,?)";
-$params = array($standard_meet,$standard_number,$standard_detail,$standard_mandatory,$agency_id,$department_id,$type_id,$group_id);
-
-$stmt = sqlsrv_query( $conn, $sql, $params);
-if($stmt == false){
-    die(print_r(sqlsrv_errors()));
+$sql0 = "INSERT INTO standard_tb (standard_meet,standard_number,standard_detail,standard_mandatory,agency_id,department_id,type_id,group_id,standard_tacking,standard_note) VALUES (?,?,?,?,?,?,?,?,?,?)";
+$params = array($standard_meet,$standard_number,$standard_detail,$standard_mandatory,$agency_id,$department_id,$type_id,$group_id,$standard_tacking,$standard_note);
+if(sqlsrv_query( $conn, $sql0, $params)){
+    $alert = '<script type="text/javascript">';
+    $alert .= 'alert("เพิ่มข้อมูลสำเร็จ !!");';
+    $alert .= 'window.location.href = "?page=status";';
+    $alert .= '</script>';
+    echo $alert;
+    exit();;
 }else{
-    echo "บันทึกข้อมูลสำเร็จ";
+    echo "Error: " . $sql0 . "<br>" . sqlsrv_errors($conn);
 }
 sqlsrv_close($conn);
 }

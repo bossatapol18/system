@@ -13,8 +13,8 @@
         include('standard/index.php');
     }elseif (isset($_GET['page']) && $_GET['page'] == 'insert') {
         include('standard/insert.php');
-    }elseif (isset($_GET['page']) && $_GET['page'] == 'dash') {
-        include('dashboard/insert.php');
+    }elseif (isset($_GET['page']) && $_GET['page'] == 'status') {
+        include('standard/status.php');
     }
     ?>
 </body>
