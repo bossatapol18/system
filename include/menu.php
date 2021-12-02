@@ -1,9 +1,9 @@
 <center>
 <div class=" p-5 my-5 bg-dark text-white font" >
-        <h2 class="" href="?page=dash">ระบบติดตามงานมาตรา 5</h2>
+        <a class="nav-link" style="font-size: 50px;" href="?page=dash">ระบบติดตามงานมาตรา 5</a>
     </div>
     <div class="container-fluid bg-white font">
-    <ul class="nav nav-tabs justify-content-center" role="tablist">
+    <ul class="nav nav-tabs justify-content-center" style="font-size: 30px;" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" href="?page=index">หน้าหลัก</a>
   </li>

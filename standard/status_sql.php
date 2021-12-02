@@ -1,5 +1,4 @@
 <?php
-include('./connection/connection.php');
 if (isset($_POST) && !empty($_POST)) {
     function utf8toThai($str){
         return iconv('utf-8','tis-620',$str);

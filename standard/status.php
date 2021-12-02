@@ -1,5 +1,5 @@
 <?php include('status_sql.php'); ?>
-
+<?php include('insert_status.php'); ?>
 <div class="tab-content font">
     <div id="home" class="container-fluid tab-pane active m-2">
         <div class="border rounded-2 border-2 bg-danger text-white ">
@@ -19,8 +19,6 @@
                         <th>วันที่แต่งตั้ง</th>
                         <th>สถานะ</th>
                         <th>เลขเอกสารที่เกี่ยวข้อง</th>
-                        <th>หมายเลข tacking</th>
-                        <th>หมายเหตุ</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,8 +31,6 @@
                          $standard_mandatory = iconv("tis-620" , "utf-8" , $data["standard_mandatory"]);
                          $department_name = iconv("tis-620" , "utf-8" , $data["department_name"]);
                          $standard_meet = iconv("tis-620" , "utf-8" , $data["standard_meet"]);
-                         $standard_tacking = iconv("tis-620" , "utf-8" , $data["standard_tacking"]);
-                         $standard_note = iconv("tis-620" , "utf-8" , $data["standard_note"]);
                         ?>
                         <tr class="text-center">
                             <td class="align-middle"><?= $i++; ?></td>
@@ -45,7 +41,7 @@
                             <td class="align-middle"><?=$standard_mandatory ?></td>
                             <td class="align-middle"><?=$department_name?></td>
                             <td class="align-middle">
-                                <input type="date" class="form-control" name="name_real"  required>
+                                <input type="date" class="form-control" name="progess_date"  required>
                             </td>
                             <td class="align-middle">
                                 <div class="mb-4">
@@ -54,8 +50,6 @@
                             <td class="align-middle"> 
                                 <input type="text" class="form-control" name="name_real"  required>
                             </td>
-                            <td class="align-middle"><?=$standard_tacking?></td>
-                            <td class="align-middle"><?=$standard_note?></td>
     </tr>
 <?php } ?>
 </tbody>

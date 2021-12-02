@@ -17,7 +17,10 @@
         include('standard/status.php');
     }elseif (isset($_GET['page']) && $_GET['page'] == 'report') {
         include('standard/report.php');
+    }elseif (isset($_GET['page']) && $_GET['page'] == 'dash') {
+        include('dashboard/index.php');
     }
     ?>
+
 </body>
 </html>
